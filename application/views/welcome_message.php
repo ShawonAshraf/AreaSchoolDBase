@@ -72,6 +72,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div id="body">
 		<p>You can find information regarding schools and the government projects they are related to.</p>
+		<p>Click on one of the following to continue :::: </p>
+		<p>
+			<ul>
+				<li><a href="http://localhost/CSE311Project/index.php/">See area info</a></li>
+				<li><a href="http://localhost/CSE311Project/index.php/">See School info</a></li>
+				<li><a href="http://localhost/CSE311Project/index.php/">See Related Government projects info</a></li>
+			</ul>
+		</p>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
