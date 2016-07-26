@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>CSE311L Project</title>
+	<title>CSE311L Project :::::HOME:::::</title>
 
 	<style type="text/css">
 
@@ -75,9 +75,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<p>Click on one of the following to continue :::: </p>
 		<p>
 			<ul>
-				<li><a href="http://localhost/CSE311Project/index.php/">See area info</a></li>
-				<li><a href="http://localhost/CSE311Project/index.php/">See School info</a></li>
-				<li><a href="http://localhost/CSE311Project/index.php/">See Related Government projects info</a></li>
+				<li><a href="http://localhost/CSE311Project/index.php/Area">See area info</a></li>
+				<li><a href="http://localhost/CSE311Project/index.php/School">See School info</a></li>
+				<li><a href="http://localhost/CSE311Project/index.php/GovernmentProjects">See Related Government projects info</a></li>
 			</ul>
 		</p>
 	</div>
