@@ -20,6 +20,6 @@ class GovernmentProjects extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('gov_proj_view');
 	}
 }
