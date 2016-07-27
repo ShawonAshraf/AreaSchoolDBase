@@ -22,4 +22,11 @@ class Area extends CI_Controller {
 	{
 		$this->load->view('area_view');
 	}
+
+	public function area_info()
+	{
+		$this->load->model('area_model');
+		$data['area_view'] = $this->area_model->getAreaInfo();
+		$this->load->view('area_view', $data);
+	}
 }

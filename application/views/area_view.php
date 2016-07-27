@@ -34,6 +34,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		padding: 14px 15px 10px 15px;
 	}
 
+	h3 {
+		color: #444;
+		background-color: transparent;
+		border-bottom: 1px solid #D0D0D0;
+		font-size: 14px;
+		font-weight: normal;
+		margin: 0 0 14px 0;
+		padding: 14px 15px 10px 15px;
+	}
+
 	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
 		font-size: 12px;
@@ -63,12 +73,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+
+	#table {
+		margin: 20px;
+	}
 	</style>
 </head>
 <body>
 
 <div id="container">
-	<h1>Area</h1>
+	<h1>Area Information</h1>
+	<h3>Data From Database</h3>
+
+	<table id="table">
+		<thead>
+			<th>AREA_ID</th>
+			<th>AREA_NAME</th>
+		</thead>
+
+		<tbody>
+			<?php foreach ($area_view as $row) { ?>
+				<tr>
+					<td><?php echo $row['AREA_ID']; ?></td>
+					<td><?php echo $row['AREA_NAME']; ?></td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	<p class="footer">
