@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<h1>Schools</h1>
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	<p class="footer">
-		<a href="http://localhost/CSE311Project/index.php/">Return to Home page</a>
+		<a href="http://localhost/AreaSchoolDBase/index.php/">Return to Home page</a>
 	</p>
 </div>
 
