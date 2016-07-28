@@ -63,12 +63,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+
+	#table {
+		margin: 20px;
+	}
 	</style>
 </head>
 <body>
 
 <div id="container">
 	<h1>Schools</h1>
+
+	<table id="table">
+		<thead>
+			<th>Area Name</th>
+			<th>School ID</th>
+			<th>School Name</th>
+			<th>Year Established</th>
+			<th>Public / Private</th>
+			<th>Number of Students</th>
+			<th>Number of Teachers</th>
+		</thead>
+
+		<tbody>
+			<?php foreach ($area_school_view as $row) { ?>
+				<tr>
+					<td><?php echo $row['AREA_NAME']; ?></td>
+					<td><?php echo $row['SCHOOL_ID']; ?></td>
+					<td><?php echo $row['SCHOOL_NAME']; ?></td>
+					<td><?php echo $row['ESTD_YEAR']; ?></td>
+					<td><?php echo $row['PUB_PVT']; ?></td>
+					<td><?php echo $row['NUM_STUDENTS']; ?></td>
+					<td><?php echo $row['NUM_TEACHERS']; ?></td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	<p class="footer">
 		<a href="http://localhost/AreaSchoolDBase/index.php/">Return to Home page</a>

@@ -85,20 +85,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<h1>Area Information</h1>
 	<h3>Data From Database</h3>
 
-	<table id="table">
-		<thead>
-			<th>AREA_ID</th>
-			<th>AREA_NAME</th>
-		</thead>
-
-		<tbody>
-			<?php foreach ($area_view as $row) { ?>
-				<tr>
-					<td><?php echo $row['AREA_ID']; ?></td>
-					<td><?php echo $row['AREA_NAME']; ?></td>
-				</tr>
-			<?php } ?>
-		</tbody>
+	<p>
+		<ul>
+			<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/area_info">Show Area Information</a></li>
+			<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/schools">Show the schools in these areas</a></li>
+		</ul>
+	</p>
 	</table>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
