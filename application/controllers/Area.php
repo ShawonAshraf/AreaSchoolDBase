@@ -29,4 +29,18 @@ class Area extends CI_Controller {
 		$data['area_view'] = $this->area_model->getAreaInfo();
 		$this->load->view('area_view', $data);
 	}
+
+	public function gov_proj()
+	{
+		$this->load->model('area_model');
+		$data['area_view'] = $this->area_model->getGovProj();
+		$this->load->view('area_view', $data);
+	}
+
+	public function schools()
+	{
+		$this->load->model('area_model');
+		$data['area_view'] = $this->area_model->getAllSchools();
+		$this->load->view('area_view', $data);
+	}
 }

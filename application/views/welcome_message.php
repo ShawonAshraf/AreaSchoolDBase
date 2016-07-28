@@ -75,9 +75,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<p>Click on one of the following to continue :::: </p>
 		<p>
 			<ul>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/Area/area_info">See area info</a></li>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/School">See School info</a></li>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/GovernmentProjects">See Related Government projects info</a></li>
+				<li><a href="http://localhost/AreaSchoolDbase/index.php/Area/area_info">Browse to Area Information Page</a></li>
+				<li><a href="http://localhost/AreaSchoolDbase/index.php/School">Browse to School Information Page</a></li>
+				<li><a href="http://localhost/AreaSchoolDbase/index.php/GovernmentProjects">Browse to see Government projects</a></li>
 			</ul>
 		</p>
 	</div>
