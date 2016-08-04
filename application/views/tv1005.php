@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>CSE311L Project :::::HOME:::::</title>
+	<title>CSE311L Project</title>
 
 	<style type="text/css">
 
@@ -68,23 +68,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Welcome to Area based School database system</h1>
+	<h1>Governemnt Projects</h1>
 
-	<div id="body">
-		<p>You can find information regarding schools and the government projects they are related to.</p>
-		<p>Click on one of the following to continue :::: </p>
-		<p>
-			<ul>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/Area">Browse to Area Information Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/School">Browse to School Information Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/GovernmentProjects">Browse to Government Projects Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/teachers">Show the teachers in these areas</a></li>
-			</ul>
-		</p>
-	</div>
+	<div id="container">
+	<h1>Teacher Information</h1>
+	<h3>Data From Database</h3>
+
+	<table id="table">
+		<thead>
+			<th>TEACHER_ID</th>
+			<th>SCHOOL_ID</th>
+			<th>TEACHER_NAME</th>
+			<th>EMAIL</th>
+		</thead>
+
+		<tbody>
+			<?php foreach ($teachers_list as $row) { ?>
+				<tr>
+					<td><?php echo $row['TEACHER_ID']; ?></td>
+					<td><?php echo $row['SCHOOL_ID']; ?></td>
+					<td><?php echo $row['TEACHER_NAME']; ?></td>
+					<td><?php echo $row['EMAIL']; ?></td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+	<p class="footer">
+		<a href="http://localhost/AreaSchoolDBase/index.php/">Return to Home page</a>
+	</p>
 </div>
+
 
 </body>
 </html>

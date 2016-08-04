@@ -68,12 +68,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Teacher</h1>
+	<h1>Governemnt Projects</h1>
+
+	<div id="container">
+	<h1>Teacher Information</h1>
+	<h3>Data From Database</h3>
+
+	<table id="table">
+		<thead>
+			<th>TEACHER_ID</th>
+			<th>SCHOOL_ID</th>
+			<th>AREA_ID</th>
+			<th>TEACHER_NAME</th>
+			<th>EMAIL</th>
+		</thead>
+
+		<tbody>
+			<?php foreach ($teacher_view as $row) { ?>
+				<tr>
+					<td><?php echo $row['TEACHER_ID']; ?></td>
+					<td><?php echo $row['SCHOOL_ID']; ?></td>
+					<td><?php echo $row['AREA_ID']; ?></td>
+					<td><?php echo $row['TEACHER_NAME']; ?></td>
+					<td><?php echo $row['EMAIL']; ?></td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
+
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	<p class="footer">
 		<a href="http://localhost/AreaSchoolDBase/index.php/">Return to Home page</a>
 	</p>
 </div>
+
 
 </body>
 </html>

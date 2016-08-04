@@ -69,8 +69,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
+	<h1>Governemnt Projects</h1>
 
-	<h1>Headmasters</h1>
+	<div id="container">
+	<h1>Government Project Information</h1>
+	<h3>Data From Database</h3>
+
+	<table id="table">
+		<thead>
+			<th>TEACHER_ID</th>
+			<th>SCHOOL_ID</th>
+			<th>AREA_ID</th>
+		</thead>
+
+		<tbody>
+			<?php foreach ($govproj_data as $row) { ?>
+				<tr>
+					<td><?php echo $row['TEACHER_ID']; ?></td>
+					<td><?php echo $row['SCHOOL_ID']; ?></td>
+					<td><?php echo $row['AREA_ID']; ?></td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	<p class="footer">

@@ -77,23 +77,61 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	#table {
 		margin: 20px;
 	}
+
+	#habijabi {
+		margin: 20px;
+	}
+
+    #ddm {
+		margin: 20px;
+	}
 	</style>
+
+    <script>
+        function showSchools(aid) {
+            <?php foreach ($school_list as $row) { if($row['AREA_ID'] == aid) { ?>
+                var table = document.getElementById("table");
+                var row = table.insertRow(1);
+                row.insertCell(0).innerHTML = <?php echo $row['SCHOOL_ID']; ?>;
+                row.insertCell(1).innerHTML = <?php echo $row['AREA_ID']; ?>;
+                row.insertCell(2).innerHTML = <?php echo $row['SCHOOL_NAME']; ?>;
+                row.insertCell(3).innerHTML = <?php echo $row['ESTD_YEAR']; ?>;
+                row.insertCell(4).innerHTML = <?php echo $row['PUB_PVT']; ?>;
+                row.insertCell(5).innerHTML = <?php echo $row['GOVERNMENT_PROJ']; ?>;
+                row.insertCell(6).innerHTML = <?php echo $row['NUM_STUDENTS']; ?>;
+                row.insertCell(7).innerHTML = <?php echo $row['NUM_TEACHERS']; ?>;
+            <?php } } ?>
+            
+        }
+    </script>
 </head>
 <body>
 
 <div id="container">
-	<h1>Area Information</h1>
+	<h1>List of all schools by area</h1>
 	<h3>Data From Database</h3>
 
-	<p>
-		<ul>
-			<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/area_info">Show Area Information</a></li>
-			<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/schools">Show the schools in these areas</a></li>
-			<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/govproj">Show the government projects in these areas</a></li>
-			<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/teachers">Show the teachers in these areas</a></li>
-		</ul>
-	</p>
+	<p id = "habijabi">View schools by area</p>
+	<select id = "ddm">
+		<?php foreach ($area_list as $row) { ?>
+			<option value = <?php $row['AREA_ID']; ?> ><?php echo $row['AREA_NAME']; ?></option>
+		<?php } ?>
+	</select>
+
+    <table id="table">
+		<thead>
+			<th>[School ID] </th>
+			<th>[Area ID] </th>
+			<th>[Name of School] </th>
+            <th>[Established] </th>
+            <th>[Public/Private] </th>
+			<th>[Government Project(s)] </th>
+			<th>[Number of Students] </th>
+			<th>[Number of Teachers]</th>
+		</thead>		
 	</table>
+
+    <button onclick="showSchools(ddm.value)">Click here</button>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	<p class="footer">

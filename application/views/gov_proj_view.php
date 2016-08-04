@@ -63,14 +63,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+
+	#table, #dfdb {
+		margin: 20px;
+	}
 	</style>
 </head>
 <body>
 
 <div id="container">
-	<h1>Gov Proj</h1>
+<h1>Governemnt Projects</h1>
 
-	<p><?php var_dump($gov_proj_view); ?></p>
+	<div id="container">
+	<h1>Government Project Information</h1>
+	<h3 id="dfdb">Data From Database</h3>
+
+	<table id="table">
+		<thead>
+			<th>AREA_ID</th>
+			<th>SCHOOL_ID</th>
+			<th>PROJECT_NAME</th>
+			<th>START_DATE</th>
+			<th>PROGRESS</th>
+			<th>BUDGET</th>
+			<th>MINISTRY</th>
+		</thead>
+
+		<tbody>
+			<?php foreach ($gov_proj_list as $row) { ?>
+				<tr>
+					<td><?php echo $row['AREA_ID']; ?></td>
+					<td><?php echo $row['SCHOOL_ID']; ?></td>
+					<td><?php echo $row['PROJ_NAME']; ?></td>
+					<td><?php echo $row['START_DATE']; ?></td>
+					<td><?php echo $row['PROGRESS_PERC']; ?>%</td>
+					<td>৳ <?php echo $row['BUDGET']; ?></td>
+					<td><?php echo $row['MINISTRY_NAME']; ?></td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	<p class="footer">

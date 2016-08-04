@@ -13,28 +13,18 @@ class School_Model extends CI_Model {
                 parent::__construct();
         }
 
-        public function get_last_ten_entries()
-        {
-                $query = $this->db->get('entries', 10);
-                return $query->result();
+        
+        public function getAllSchools() {
+          $q_result = $this->db->select('SCHOOL_ID, AREA_ID, SCHOOL_NAME, ESTD_YEAR, PUB_PVT, GOVERNMENT_PROJ, NUM_STUDENTS, NUM_TEACHERS');
+          $this->db->from('SCHOOL');
+          return $this->db->get()->result_array();
         }
 
-        public function insert_entry()
-        {
-                $this->title    = $_POST['title']; // please read the below note
-                $this->content  = $_POST['content'];
-                $this->date     = time();
-
-                $this->db->insert('entries', $this);
-        }
-
-        public function update_entry()
-        {
-                $this->title    = $_POST['title'];
-                $this->content  = $_POST['content'];
-                $this->date     = time();
-
-                $this->db->update('entries', $this, array('id' => $_POST['id']));
+        public function getAllAreas() {
+          $q_result = $this->db->query('SELECT s.SCHOOL_ID, s.AREA_ID, a.AREA_NAME, s.SCHOOL_NAME, s.ESTD_YEAR,
+                                        s.PUB_PVT, s.GOVERNMENT_PROJ, s.NUM_STUDENTS, s.NUM_TEACHERS
+                                        FROM SCHOOL s JOIN AREA a ON a.AREA_ID = s.AREA_ID');
+          return $q_result->result_array();
         }
 
 }

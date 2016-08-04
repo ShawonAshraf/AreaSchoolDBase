@@ -34,6 +34,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		padding: 14px 15px 10px 15px;
 	}
 
+	h3 {
+		color: #444;
+		background-color: transparent;
+		border-bottom: 1px solid #D0D0D0;
+		font-size: 14px;
+		font-weight: normal;
+		margin: 0 0 14px 0;
+		padding: 14px 15px 10px 15px;
+	}
+
 	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
 		font-size: 12px;
@@ -67,40 +77,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	#table {
 		margin: 20px;
 	}
+
+	#habijabi {
+		margin: 20px;
+	}
 	</style>
 </head>
 <body>
 
 <div id="container">
-	<h1>Schools</h1>
+	<h1>List of all schools</h1>
+	<h3>Data From Database</h3>
 
 	<table id="table">
 		<thead>
-			<th>Area Name</th>
-			<th>School ID</th>
-			<th>School Name</th>
-			<th>Year Established</th>
-			<th>Public / Private</th>
-			<th>Number of Students</th>
-			<th>Number of Teachers</th>
-			<th>Govt Projects</th>
+			<th>[School ID] </th>
+			<th>[Area ID] </th>
+			<th>[Name of School] </th>
+            <th>[Established] </th>
+            <th>[Public/Private] </th>
+			<th>[Government Project(s)] </th>
+			<th>[Number of Students] </th>
+			<th>[Number of Teachers]</th>
 		</thead>
 
 		<tbody>
-			<?php foreach ($area_school_view as $row) { ?>
+			<?php foreach ($school_list as $row) { ?>
 				<tr>
-					<td><?php echo $row['AREA_NAME']; ?></td>
 					<td><?php echo $row['SCHOOL_ID']; ?></td>
+					<td><?php echo $row['AREA_ID']; ?></td>
 					<td><?php echo $row['SCHOOL_NAME']; ?></td>
-					<td><?php echo $row['ESTD_YEAR']; ?></td>
-					<td><?php echo $row['PUB_PVT']; ?></td>
+                    <td><?php echo $row['ESTD_YEAR']; ?></td>
+                    <td><?php echo $row['PUB_PVT']; ?></td>
+					<td><?php echo $row['GOVERNMENT_PROJ']; ?></td>
 					<td><?php echo $row['NUM_STUDENTS']; ?></td>
 					<td><?php echo $row['NUM_TEACHERS']; ?></td>
-					<td><?php echo $row['GOVERNMENT_PROJ']; ?></td>
 				</tr>
 			<?php } ?>
 		</tbody>
 	</table>
+	<!p>
+		<!a id = "habijabi" href = "http://localhost/AreaSchoolDBase/index.php/School/schoolsByArea"><!View Schools by Area</a> 
+	<!/p>
+
+	<p id = "habijabi">View schools by area</p>
+	<select id = "habijabi">
+		<?php foreach ($school_list as $row) { ?>
+			<option value = <?php $row['SCHOOL_ID']; ?> ><?php echo $row['SCHOOL_NAME']; ?></option>
+		<?php } ?>
+	</select>
+	
+	<p id = "name"></p>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	<p class="footer">

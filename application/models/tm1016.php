@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Teacher_Model extends CI_Model {
+class tm1016 extends CI_Model {
 
         public $title;
         public $content;
@@ -11,6 +11,11 @@ class Teacher_Model extends CI_Model {
         {
                 // Call the CI_Model constructor
                 parent::__construct();
+        }
+
+        public function getTeachers() {
+            $q_result = $this->db->query('SELECT TEACHER_ID, SCHOOL_ID, TEACHER_NAME, EMAIL FROM TEACHER WHERE SCHOOL_ID = 1016');
+            return $q_result->result_array();
         }
 
 }

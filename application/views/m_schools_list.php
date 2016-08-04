@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>CSE311L Project :::::HOME:::::</title>
+	<title>CSE311L Project</title>
 
 	<style type="text/css">
 
@@ -29,6 +29,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		background-color: transparent;
 		border-bottom: 1px solid #D0D0D0;
 		font-size: 19px;
+		font-weight: normal;
+		margin: 0 0 14px 0;
+		padding: 14px 15px 10px 15px;
+	}
+
+	h3 {
+		color: #444;
+		background-color: transparent;
+		border-bottom: 1px solid #D0D0D0;
+		font-size: 14px;
 		font-weight: normal;
 		margin: 0 0 14px 0;
 		padding: 14px 15px 10px 15px;
@@ -63,27 +73,52 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+
+	#table {
+		margin: 20px;
+	}
+
+	#habijabi {
+		margin: 20px;
+	}
 	</style>
 </head>
 <body>
 
 <div id="container">
-	<h1>Welcome to Area based School database system</h1>
+	<h1>List of all schools in Malibagh</h1>
+	<h3>Data From Database</h3>
 
-	<div id="body">
-		<p>You can find information regarding schools and the government projects they are related to.</p>
-		<p>Click on one of the following to continue :::: </p>
-		<p>
-			<ul>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/Area">Browse to Area Information Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/School">Browse to School Information Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/GovernmentProjects">Browse to Government Projects Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/teachers">Show the teachers in these areas</a></li>
-			</ul>
-		</p>
-	</div>
+	<table id="table">
+		<thead>
+			<th>[School ID] </th>
+			<th>[Name of School] </th>
+            <th>[Established] </th>
+            <th>[Public/Private] </th>
+			<th>[Government Project(s)] </th>
+			<th>[Number of Students] </th>
+			<th>[Number of Teachers]</th>
+		</thead>
 
+		<tbody>
+			<?php foreach ($schools_list as $row) { ?>
+				<tr>
+					<td><?php echo $row['SCHOOL_ID']; ?></td>
+					<td><?php echo $row['SCHOOL_NAME']; ?></td>
+                    <td><?php echo $row['ESTD_YEAR']; ?></td>
+                    <td><?php echo $row['PUB_PVT']; ?></td>
+					<td><?php echo $row['GOVERNMENT_PROJ']; ?></td>
+					<td><?php echo $row['NUM_STUDENTS']; ?></td>
+					<td><?php echo $row['NUM_TEACHERS']; ?></td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+	
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+	<p class="footer">
+		<a href="http://localhost/AreaSchoolDBase/index.php/">Return to Home page</a>
+	</p>
 </div>
 
 </body>

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>CSE311L Project :::::HOME:::::</title>
+	<title>CSE311L Project :::::About Us:::::</title>
 
 	<style type="text/css">
 
@@ -71,16 +71,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<h1>Welcome to Area based School database system</h1>
 
 	<div id="body">
-		<p>You can find information regarding schools and the government projects they are related to.</p>
-		<p>Click on one of the following to continue :::: </p>
-		<p>
-			<ul>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/Area">Browse to Area Information Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/School">Browse to School Information Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDbase/index.php/GovernmentProjects">Browse to Government Projects Page</a></li>
-				<li><a href="http://localhost/AreaSchoolDBase/index.php/Area/teachers">Show the teachers in these areas</a></li>
-			</ul>
-		</p>
+		<h4>Project created by</h4>
+		<p>Shawon Ashraf : 1410576042</p>
+        <p>Md. Abdul Ahad Chowdhury : 1410575042</p>
+		
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
